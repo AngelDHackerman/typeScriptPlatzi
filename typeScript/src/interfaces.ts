@@ -37,3 +37,52 @@ showPicture ({
   orientation: PhotoOrientation.Portrait,
   // extra: 'prueba', //Error
 })
+
+              // Interfaces opcionales
+
+interface PictureConfig { 
+  title?: string;
+  date?: string;
+  orientation?: PhotoOrientation;
+}
+
+const generatePicture = (config: PictureConfig) => { 
+  const pic = {title: 'Default', date: '2022-01'};
+  if (config.title) {
+    pic.title = config.title;
+  }
+  if (config.date) { 
+    pic.date = config.date;
+  }
+
+  return pic;
+}
+
+let picture = generatePicture ({});
+console.log('picture:' ,picture);
+
+picture = generatePicture({title: 'Travel pic'});
+console.log('picture:' ,picture);
+
+picture = generatePicture({title: 'Travel pic 2', date: '2025-01'});
+console.log('picture:' ,picture);
+
+
+
+          // Interfaz: Usuario
+          // propiedad ReadOnly 
+
+interface User { 
+  readonly id: number; //Solo lectura
+  userName: string;
+  isPro: boolean;
+}
+
+let user: User;
+user = {id: 10, userName: 'Dariaux', isPro: true}; 
+console.log('user:',user);
+
+user.userName = 'DXarrr';
+// user.id = 20; //Error
+console.log('user:',user);
+

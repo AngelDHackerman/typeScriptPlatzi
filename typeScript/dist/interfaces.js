@@ -25,3 +25,25 @@ showPicture({
     orientation: PhotoOrientation.Portrait,
     // extra: 'prueba', //Error
 });
+const generatePicture = (config) => {
+    const pic = { title: 'Default', date: '2022-01' };
+    if (config.title) {
+        pic.title = config.title;
+    }
+    if (config.date) {
+        pic.date = config.date;
+    }
+    return pic;
+};
+let picture = generatePicture({});
+console.log('picture:', picture);
+picture = generatePicture({ title: 'Travel pic' });
+console.log('picture:', picture);
+picture = generatePicture({ title: 'Travel pic 2', date: '2025-01' });
+console.log('picture:', picture);
+let user;
+user = { id: 10, userName: 'Dariaux', isPro: true };
+console.log('user:', user);
+user.userName = 'DXarrr';
+// user.id = 20; //Error
+console.log('user:', user);
