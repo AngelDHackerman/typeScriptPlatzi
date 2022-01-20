@@ -24,3 +24,22 @@ const createPic = (title, date, size) => {
 };
 const picture = createPic('Platzi session', '2019-9-12', '100x100');
 console.log(picture);
+// Tipo de retorno con TypeScript 
+// los : significa que la funcion puede retornar un string o bien nunca retornar nada.
+let handleError1 = (code, message) => {
+    // Procesar el codigo, mensaje. 
+    if (message == 'error') {
+        throw new Error(`${message}. Tenemos un error papu codigo: ${code}`);
+    }
+    else {
+        return 'An error has occurred papu';
+    }
+};
+try {
+    let result = handleError1(404, 'pagnia no encontrada');
+    console.log('result:', result);
+    let result1 = handleError1(404, 'error');
+    console.log('result1:', result1);
+}
+catch (error) {
+}
