@@ -9,9 +9,9 @@ enum PhotoOrientation {
 
 class Picture {
   // propiedades
-  public id: number;
-  public title: string;
-  public orientation: PhotoOrientation;
+  private id: number;
+  private title: string;
+  private orientation: PhotoOrientation;
 
   public constructor (id: number, 
               title: string, 
@@ -30,9 +30,9 @@ class Picture {
 }
 
 class Album { 
-  public id: number;
-  public title: string;
-  public pictures: Picture[];
+  private id: number;
+  private title: string;
+  private pictures: Picture[];
 
   public constructor (
     id:number, 
@@ -57,7 +57,7 @@ console.log('album:', album);
 
           // Accediendo a los miembros publicos
 
-picture.id = 100; // public 
-picture.title = 'Another title'; //public 
-album.title = 'Personal activities'; 
-console.log('album', album);
+// picture.id = 100; // Error because it is a private value.
+// picture.title = 'Another title'; // Error because it is a private value.
+// album.title = 'Personal activities'; // Error because it is a private value.
+// console.log('album', album);
